@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { FormNewTaskComponent } from '../components/form-new-task/form-new-task.component';
+import { TaskDetailComponent } from '../components/task-detail/task-detail.component';
 
 
 @NgModule({
@@ -14,6 +16,6 @@ import { HomePageRoutingModule } from './home-routing.module';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, FormNewTaskComponent, TaskDetailComponent]
 })
 export class HomePageModule {}

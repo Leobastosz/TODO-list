@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Nova tarefa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (fullscreen) = "true">
+
+      <ion-item>
+        <ion-input [(ngModel)] = "task.title" label = "Título" labelPlacement="floating"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input [(ngModel)] = "task.subtitle" label = "Subtítulo" labelPlacement="floating"></ion-input>
+      </ion-item>
+
+        <ion-item>
+        <ion-textarea [(ngModel)] = "task.description" label = "Descrição" labelPlacement="floating"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-input [(ngModel)] = "task.image" label = "Imagem" labelPlacement="floating"></ion-input>
+      </ion-item>
+      
+      <ion-button expand="block" (click)="close()">Salvar</ion-button>
+
+  
+
+</ion-content>

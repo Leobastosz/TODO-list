@@ -1,20 +1,47 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Tarefas
     </ion-title>
+    <ion-button [routerLink] ="['/login']" class="mr-10" slot="end">
+      <ion-icon  name="log-out-outline"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list>
+    <ion-item-sliding *ngFor="let task of tasks">
+      <ion-item detail="true" (click)="openDetail(task)" >
+        <ion-thumbnail slot="start">
+          <img src="{{ task.image != '' ? task.image : '../../assets/no-img.png' }}" alt="">
+        </ion-thumbnail>
+        <ion-label>
+          <h3>{{task.title}}</h3>
+          <p>{{task.subtitle}}</p>
+        </ion-label>
+      </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+      <ion-item-options>
+
+        <ion-item-option (click)="editTask(task)" class="opt-edit">
+          <ion-icon size="large" name="create-outline"></ion-icon>
+        </ion-item-option>
+
+        <ion-item-option (click)="confirmDelete(task.id)" class="opt-delete">
+          <ion-icon size="large" name="trash"></ion-icon>
+        </ion-item-option>
+
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="addNewTask()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+
 </ion-content>

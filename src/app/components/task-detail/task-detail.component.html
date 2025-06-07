@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ver tarefa
+    </ion-title>
+    <ion-button (click)="close()" class="mr-10" slot="end">
+      <ion-icon  name="close-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-card>
+  <img alt="" src="{{ task.image != '' ? task.image : '../../assets/tcc.png' }}" />
+  <ion-card-header>
+    <ion-card-title>{{task.tittle}}</ion-card-title>
+    <ion-card-subtitle>{{task.subtitle}}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    {{task.description}}
+  </ion-card-content>
+</ion-card>
